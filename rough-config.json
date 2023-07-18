@@ -1,0 +1,35 @@
+{
+    "$schema": "https://purl.org/csv-cubed/qube-config/v1",
+    "title": "Gender of people sleeping rough by local authority district and region",
+    "description": "Gender of people sleeping rough by local authority district and region",
+    "creator": "https://www.gov.uk/government/organisations/department-for-levelling-up-housing-and-communities",
+    "publisher": "https://www.gov.uk/government/organisations/office-for-national-statistics",
+    "license": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "keywords": [
+        "Homelessness"
+    ],
+    "columns": {
+        "Local authority ONS code": false,
+        "Local authority":false,
+        "Region":false,
+        "Region ONS code": {
+                "from_template": "statistical-geography"
+            },
+        "Period": {  
+            "label": "Period",
+            "type": "dimension"
+        },
+        "Numerical": {
+            "type": "observations",
+            "measure": {
+                "label": "Count of people",
+                "from_existing": "https://purl.org/csv-cubed/resources/measures#people"
+            },
+            "data_type": "integer",
+            "unit": {
+                "label": "Number of people",
+                "from_existing": "http://qudt.org/vocab/unit/NUM"
+            }
+        }
+    }
+}
